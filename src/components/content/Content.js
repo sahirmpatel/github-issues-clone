@@ -1,6 +1,8 @@
 import { React, useState } from 'react'
-import IssueList from "../IssueList"
+import IssueList from "../IssueList/IssueList"
 import IssueDetails from "../issuedetails/IssueDetails"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
+
 
 const issuedetailv1 = {
 
@@ -19,30 +21,47 @@ const issuedetailv1 = {
 function Content() {
     const [issuedetails, setissuedetails] = useState(issuedetailv1)
 
-
-
     const updateDetail = (newdetail) => {
-
         setissuedetails({ details: newdetail })
-
     }
 
-
-
-
-
-
-
-
-
     return (
-        <div>
-            <IssueDetails props={issuedetails} />
 
-            <IssueList updateDetail={updateDetail} />
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" exact render={
+                    (props) => (<IssueList {...props} updateDetail={updateDetail} />)
+                } />
+                <Route path="/detail" exact render={
+                    (props) => (<IssueDetails {...props} props={issuedetails} />)
+                } />
+            </Switch>
+        </BrowserRouter>
 
-        </div>
+
+
     )
 }
 
 export default Content
+
+{/* <BrowserRouter>
+    <Switch>
+    <Route path="/" exact component={home} />
+    <Route path="/about" exact component={about} />
+    <Route path="/" render={()=> <div>404 not found</div> } />
+    </Switch>
+</BrowserRouter>
+
+
+
+// links
+<Link to="/about" >
+</Link>
+
+onClick={()=>{
+    //api call
+    history.push('/about')
+}} */}
+
+// match part 12:50

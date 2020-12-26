@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import axios from "axios"
-import Issue from "./Issue"
+import Issue from "./Issue/Issue"
 function IssueList({ updateDetail }) {
     console.log("the passed down function is ", updateDetail)
     const fakedata = [
