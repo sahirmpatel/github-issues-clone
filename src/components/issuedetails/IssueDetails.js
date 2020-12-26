@@ -17,9 +17,9 @@ function IssueDetails({ props }) {
 
     return (
         <>
-            <Link to="/" > <button id="back-button" >Back</button> </Link>
-            <div className="issuedetail" >
 
+            <div className="issuedetail" >
+                <Link to="/" > <button id="back-button" >Back</button> </Link>
                 <div className="issuedetail-meta">
                     <h2 className="title">{props.details.title} <br /> <span>#{props.details.number}</span> </h2>
 

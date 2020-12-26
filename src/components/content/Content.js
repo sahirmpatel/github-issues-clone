@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import IssueList from "../IssueList/IssueList"
 import IssueDetails from "../issuedetails/IssueDetails"
+import Header from '../Header/Header'
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 
@@ -16,7 +17,10 @@ const issuedetailv1 = {
     }
 }
 
-
+const repodetails = {
+    account: "airbnb",
+    repo: "javascript"
+}
 
 function Content() {
     const [issuedetails, setissuedetails] = useState(issuedetailv1)
@@ -28,8 +32,10 @@ function Content() {
     return (
 
         <BrowserRouter>
+            <Header details={repodetails} />
             <Switch>
                 <Route path="/" exact render={
+
                     (props) => (<IssueList {...props} updateDetail={updateDetail} />)
                 } />
                 <Route path="/detail" exact render={

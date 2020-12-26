@@ -1,12 +1,49 @@
+.br{
+    border: 1px solid black;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit; 
+}
+a:hover{
+    text-decoration: underline;
+}
+
+
 .Issue{
-    border: 1px solid #333;
+    border: 1px solid #ccc;;
     width: 80%;
     margin: auto;
     margin: 10px auto;
     border-radius: 10px;
-  
+    display: flex;
+    padding-bottom: 10px;
 }
 
-.Issue   img{
-    height: 100px;
+.Issue:hover{
+    background-color: #F6F8FA;
+}
+
+.Issue  img{
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.user-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.issue-card-maincontent{
+    flex: 1;
+}
+
+.issue-card-comments{
+    align-self: center;
+    padding-right: 10px;
 }

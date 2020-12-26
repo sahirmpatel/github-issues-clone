@@ -1,0 +1,18 @@
+.header{
+    background-color: #f4f4f4;
+}
+
+ .repo-details img {
+    height: 50px;
+    border: 0.5px solid #9e9c9c47;
+    border-radius: 12px;
+}
+.repo-details{
+    width: 80%;
+    font-size:23px;
+    margin: auto;
+    font-size: 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
