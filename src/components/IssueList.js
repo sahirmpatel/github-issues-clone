@@ -4,18 +4,7 @@ import Issue from "./Issue"
 function IssueList({ updateDetail }) {
     console.log("the passed down function is ", updateDetail)
     const fakedata = [
-        // {
-        //     title: 'Error: "Commit tree already contains fiber 140. This is a bug in React DevTools."',
-        //     user: { login: "divyanshSrivastava19" }
-        // },
-        // {
-        //     title: 'Error: "Commit tree already contains fiber 140. This is a bug in React DevTools."',
-        //     user: { login: "divyanshSrivastava19" }
-        // },
-        // {
-        //     title: 'Error: "Commit tree already contains fiber 140. This is a bug in React DevTools."',
-        //     user: { login: "divyanshSrivastava19" }
-        // }
+
 
     ]
 
@@ -31,12 +20,8 @@ function IssueList({ updateDetail }) {
 
     return (
         <div>
-            {data.map(issuedata => <div onClick={(e) => {
-                e.preventDefault()
-                updateDetail(issuedata.title)
-            }} >
-                <Issue key={issuedata.number} issuedata={issuedata} />
-            </div>)
+            {data.map(issuedata =>
+                <Issue key={issuedata.number} issuedata={issuedata} updateDetail={updateDetail} />)
             }
         </div >
     )
@@ -45,3 +30,12 @@ function IssueList({ updateDetail }) {
 export default IssueList
 
 
+// <div>
+// {data.map(issuedata => <div onClick={(e) => {
+//     e.preventDefault()
+//     updateDetail(issuedata)
+// }} >
+//     <Issue key={issuedata.number} issuedata={issuedata} updateDetail={updateDetail} />
+// </div>)
+// }
+// </div >

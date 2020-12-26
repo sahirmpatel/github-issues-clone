@@ -2,12 +2,12 @@ import React from 'react'
 import IssueLabel from "./IssueLabel"
 import ReactTimeAgo from "react-time-ago"
 import "./Issue.css"
-function Issue({ issuedata }) {
+function Issue({ issuedata, updateDetail }) {
 
 
     return (
         <div className="Issue" >
-            <h2>{issuedata.title}</h2>
+            <h2 onClick={() => { updateDetail(issuedata) }} >{issuedata.title}</h2>
             <p>#{issuedata.number}</p>
 
             <ReactTimeAgo date={issuedata.created_at} locale="en-US" />
