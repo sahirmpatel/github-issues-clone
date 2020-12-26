@@ -1,0 +1,12 @@
+.Issue{
+    border: 1px solid #333;
+    width: 80%;
+    margin: auto;
+    margin: 10px auto;
+    border-radius: 10px;
+  
+}
+
+.Issue   img{
+    height: 100px;
+}
