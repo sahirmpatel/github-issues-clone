@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import "./Issue.css"
 function Issue({ issuedata, updateDetail }) {
 
-
     return (
         <div className="Issue" >
 
