@@ -30,7 +30,7 @@ function Issue({ issuedata, updateDetail }) {
             </div> */}
 
             <div className="issue-card-comments ">
-                {issuedata.comments} comment(s)
+                {issuedata.comments} 💬
            </div>
 
         </div>

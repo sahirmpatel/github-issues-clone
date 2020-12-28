@@ -52,7 +52,7 @@ function IssueDetails({ props }) {
                             <a href={comment.user.html_url}>
                                 {comment.user.login}
                             </a>
-                            <p>commented at {props.details.created_at}  </p>
+                            <p>commented <ReactTimeAgo date={props.details.created_at} locale="en-US" /> ago </p>
                         </div>
                         <ReactMarkdown className="markdown" source={comment.body} />
                     </div>

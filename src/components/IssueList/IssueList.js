@@ -38,7 +38,7 @@ function IssueList({ updateDetail }) {
     }
 
     if (loading) {
-        return <h2>loading...</h2>
+        return <h2 style={{ textAlign: "center" }} >loading...</h2>
     }
     else return (
         <div >
