@@ -34,7 +34,7 @@ function Header({ details }) {
     else return (
         <div className="header" >
             <div className="repo-details" >
-                <img src={repoDetails.owner.avatar_url} alt="" />
+                <img src={repoDetails.owner.avatar_url} alt="repo-image" />
                 <a href={repoDetails.html_url} target="_blank" > {repoDetails.full_name}</a>
                 <p>{repoDetails.open_issues} open issues</p>
             </div>

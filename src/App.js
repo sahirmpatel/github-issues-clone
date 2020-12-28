@@ -5,15 +5,15 @@ import Header from './components/Header/Header'
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 
-const issuedetailv1 = {
+const sampleissuedetail = {
 
   details: {
     title: " title",
-    user: "test user",
+    user: "sample user",
     state: "test",
-    created_at: "test",
-    body: "test",
-    comments: "test"
+    created_at: "sample",
+    body: "sample",
+    comments: "sample"
   }
 }
 
@@ -25,7 +25,7 @@ const repodetails = {
 
 
 function App() {
-  const [issuedetails, setissuedetails] = useState(issuedetailv1)
+  const [issuedetails, setissuedetails] = useState(sampleissuedetail)
 
   const updateDetail = (newdetail) => {
     setissuedetails({ details: newdetail })
@@ -43,6 +43,10 @@ function App() {
           } />
           <Route path="/detail" exact render={
             (props) => (<IssueDetails {...props} props={issuedetails} repodetails={repodetails} />)
+          } />
+          <Route path="/" render={
+
+            () => <h2>404 not found</h2>
           } />
         </Switch>
       </BrowserRouter>
