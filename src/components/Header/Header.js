@@ -6,7 +6,7 @@ function Header({ details }) {
 
     const samplerepo = {
         owner: {
-            avatar_url: "http://placecorgi.com/373/260"
+            avatar_url: "http://placecorgi.com/451/451"
         },
         full_name: "sampleowner/samplerepo",
         open_issues: 10
@@ -27,7 +27,7 @@ function Header({ details }) {
         <div className="header" >
             <div className="repo-details" >
                 <img src={repoDetails.owner.avatar_url} alt="" />
-                <p>{repoDetails.full_name}</p>
+                <a href={repoDetails.html_url} target="_blank" > {repoDetails.full_name}</a>
                 <p>{repoDetails.open_issues} open issues</p>
             </div>
         </div>
