@@ -1,8 +1,11 @@
-import { React, useEffect, useState } from 'react'
+import { React, useEffect, useState, useContext } from 'react'
 import axios from "axios"
 import Issue from "./Issue/Issue"
 import Pagination from './Pagination/Pagination'
+
 function IssueList({ updateDetail }) {
+
+
 
     const fakedata = [
 
@@ -38,27 +41,17 @@ function IssueList({ updateDetail }) {
         return <h2>loading...</h2>
     }
     else return (
-        <div className="">
+        <div >
             <div>
                 {currentIssue.map(issuedata =>
                     <Issue key={issuedata.number} issuedata={issuedata} updateDetail={updateDetail} />)
                 }
 
             </div >
-            <Pagination issuePerPage={issuePerPage} totalIssues={data.length} switchpage={switchpage} />
+            <Pagination issuePerPage={issuePerPage} totalIssues={data.length} switchpage={switchpage} currentPage={currentPage} />
         </div>
     )
 }
 
 export default IssueList
 
-
-// <div>
-// {data.map(issuedata => <div onClick={(e) => {
-//     e.preventDefault()
-//     updateDetail(issuedata)
-// }} >
-//     <Issue key={issuedata.number} issuedata={issuedata} updateDetail={updateDetail} />
-// </div>)
-// }
-// </div >

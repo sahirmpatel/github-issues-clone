@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Pagination.css"
-const Pagination = ({ issuePerPage, totalIssues, switchpage }) => {
+const Pagination = ({ issuePerPage, totalIssues, switchpage, currentPage }) => {
 
     let pageNumbers = [];
     let num = Math.ceil(totalIssues / issuePerPage)
@@ -16,8 +16,8 @@ const Pagination = ({ issuePerPage, totalIssues, switchpage }) => {
         <div>
             <ul className="pagination">
                 {pageNumbers.map(number => (
-                    <li key={number} className="page-item" >
-                        <a onClick={() => switchpage(number)} href="#" className='page-link btn-grad'>
+                    <li key={number} className="page-item " >
+                        <a onClick={() => switchpage(number)} href="#" className={number === currentPage ? "active-page page-link" : "page-link"}>
                             {number}
                         </a>
                     </li>

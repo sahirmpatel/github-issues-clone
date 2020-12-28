@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom"
+import ReactTimeAgo from "react-time-ago"
 import "./IssueDetails.css"
 function IssueDetails({ props }) {
 
@@ -31,7 +32,7 @@ function IssueDetails({ props }) {
                         <a href={props.details.user.html_url}>
                             {props.details.user.login}
                         </a>
-                        <p>opened this {props.details.created_at}  </p>
+                        <p>opened this <ReactTimeAgo date={props.details.created_at} locale="en-US" /></p>
                     </div>
                 </div>
 
