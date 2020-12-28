@@ -4,16 +4,16 @@ import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom"
 import ReactTimeAgo from "react-time-ago"
 import "./IssueDetails.css"
-function IssueDetails({ props }) {
+function IssueDetails({ props, repodetails }) {
 
 
     const [comments, setComments] = useState([])
 
     useEffect(() => {
-        axios.get(`https://api.github.com/repos/airbnb/javascript/issues/${props.details.number}/comments`)
+        axios.get(`https://api.github.com/repos/${repodetails.account}/${repodetails.repo}/issues/${props.details.number}/comments`)
             .then(res => setComments(res.data))
     }
-        , [props.details.number])
+        , [props.details.number, repodetails])
 
 
     return (
@@ -52,7 +52,7 @@ function IssueDetails({ props }) {
                             <a href={comment.user.html_url}>
                                 {comment.user.login}
                             </a>
-                            <p>commented <ReactTimeAgo date={props.details.created_at} locale="en-US" /> ago </p>
+                            <p>commented <ReactTimeAgo date={props.details.created_at} locale="en-US" /></p>
                         </div>
                         <ReactMarkdown className="markdown" source={comment.body} />
                     </div>

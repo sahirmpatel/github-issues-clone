@@ -3,7 +3,7 @@ import axios from "axios"
 import Issue from "./Issue/Issue"
 import Pagination from './Pagination/Pagination'
 
-function IssueList({ updateDetail }) {
+function IssueList({ updateDetail, repodetails }) {
 
 
 
@@ -19,13 +19,13 @@ function IssueList({ updateDetail }) {
     useEffect(() => {
         const fetchIssues = async () => {
             setLoading(true)
-            const res = await axios.get("https://api.github.com/repos/airbnb/javascript/issues?per_page=100&page=1")
+            const res = await axios.get(`https://api.github.com/repos/${repodetails.account}/${repodetails.repo}/issues?per_page=100&page=1`)
             setData(res.data)
             setLoading(false)
         }
         fetchIssues()
 
-    }, [])
+    }, [repodetails])
 
     // get current issues
     const indexOfLastIssue = currentPage * issuePerPage;
