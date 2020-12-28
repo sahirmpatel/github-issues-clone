@@ -13,17 +13,25 @@ function Header({ details }) {
     }
 
     const [repoDetails, setRepoDetails] = useState(samplerepo)
+    const [loading, setLoading] = useState(false)
+
 
     useEffect(() => {
-        axios.get(`https://api.github.com/repos/${details.account}/${details.repo}`)
-            .then(res => {
-                setRepoDetails(res.data);
-                console.log("repo details are ", res.data)
-            })
-    }
-        , [details])
+        const fetchRepoDetails = async () => {
+            setLoading(true)
+            const res = await axios.get(`https://api.github.com/repos/${details.account}/${details.repo}`)
+            setRepoDetails(res.data);
+            setLoading(false)
+        }
+        fetchRepoDetails()
 
-    return (
+    }, [details])
+
+
+    if (loading) {
+        return <h2 style={{ textAlign: "center" }} className="header" >loading repo details...</h2>
+    }
+    else return (
         <div className="header" >
             <div className="repo-details" >
                 <img src={repoDetails.owner.avatar_url} alt="" />

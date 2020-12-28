@@ -1,5 +1,6 @@
 .header{
-    background-color: #f4f4f4;
+    background: rgb(210,209,209);
+    background: linear-gradient(0deg, rgba(210,209,209,0.5196342575115984) 0%, rgba(213,213,213,0.5168331370634192) 50%, rgba(193,191,191,0.6036678709569765) 100%);
 }
 
  .repo-details img {
