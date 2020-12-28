@@ -18,8 +18,8 @@ const issuedetailv1 = {
 }
 
 const repodetails = {
-  account: "uber",
-  repo: "cadence"
+  account: "airbnb",
+  repo: "javascript"
 }
 
 
